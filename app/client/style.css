@@ -1,0 +1,46 @@
+.ui.top.inverted.menu {
+  height: 60px;
+  background: #1976D2;
+}
+
+.landing-background {
+  height: 100vh;
+  height: calc(100vh - 60px);
+  padding: 20vh 0;
+  background: url("/images/landing-background.jpg");
+  background-size: cover;
+  color: #FFF;
+}
+
+.landing-background h1.ui.header {
+  padding: 0 0 50px 0;
+  color: #FFF;
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.landing-background h2.ui.header {
+  color: #FFF;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.landing-content.ui.grid {
+  margin: 0;
+  height: 100vh;
+  padding: 35vh 0;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.landing-content .heading {
+  padding: 30px 0;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.footer {
+  padding: 70px 0 50px;
+  background: #0D47A1;
+  color: #FFF;
+}
