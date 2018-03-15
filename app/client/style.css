@@ -9,18 +9,15 @@
   padding: 20vh 0;
   background: url("/images/landing-background.jpg");
   background-size: cover;
-  color: #FFF;
 }
 
 .landing-background h1.ui.header {
   padding: 0 0 50px 0;
-  color: #FFF;
   font-size: 50px;
   font-weight: normal;
 }
 
 .landing-background h2.ui.header {
-  color: #FFF;
   font-size: 30px;
   font-weight: normal;
 }

@@ -7,8 +7,8 @@ class Landing extends React.Component {
     return (
         <Container fluid>
           <Container fluid className="landing-background" textAlign="center">
-            <Header as="h1">Digits</Header>
-            <Header as="h2">A simple to use address book with a clean interface.</Header>
+            <Header inverted as="h1">Digits</Header>
+            <Header inverted as="h2">A simple to use address book with a clean interface.</Header>
           </Container>
           <Grid container centered stackable textAlign='center' columns={3} className="landing-content">
             <Grid.Column textAlign="center">
