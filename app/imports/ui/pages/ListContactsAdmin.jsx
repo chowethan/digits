@@ -2,7 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Header, Card, Loader } from 'semantic-ui-react';
 import { Contacts } from '/imports/api/contact/contact';
-import Contact from '/imports/ui/components/Contact';
+import ContactAdmin from '/imports/ui/components/ContactAdmin';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
@@ -20,7 +20,7 @@ class ListContacts extends React.Component {
         <Container>
           <Header inverted as="h2" textAlign="center">List Contacts</Header>
           <Card.Group>
-            {this.props.contacts.map((contact, index) => <Contact key={index} contact={contact} />)}
+            {this.props.contacts.map((contact, index) => <ContactAdmin key={index} contact={contact} />)}
           </Card.Group>
         </Container>
     );
@@ -35,8 +35,8 @@ ListContacts.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-  // Get access to Contacts documents.
-  const subscription = Meteor.subscribe('Contacts');
+  // Get access to ContactsAdmin documents.
+  const subscription = Meteor.subscribe('ContactsAdmin');
   return {
     contacts: Contacts.find({}).fetch(),
     ready: subscription.ready(),
