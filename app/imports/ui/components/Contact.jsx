@@ -1,11 +1,30 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Contacts } from '/imports/api/contact/contact';
+import { Card, Image, Button } from 'semantic-ui-react';
+import { Bert } from 'meteor/themeteorchef:bert';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Contact extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(contactID) {
+    Contacts.remove(contactID, this.deleteCallback);
+  }
+
+  deleteCallback(error) {
+    if (error) {
+      Bert.alert({ type: 'danger', message: `Remove failed: ${error.message}` });
+    } else {
+      Bert.alert({ type: 'success', message: 'Remove succeeded' });
+    }
+  }
+
+ render() {
     return (
         <Card centered>
           <Card.Content>
@@ -22,6 +41,9 @@ class Contact extends React.Component {
           </Card.Content>
           <Card.Content extra>
             <Link to={`/edit/${this.props.contact._id}`}>Edit</Link>
+          </Card.Content>
+          <Card.Content extra>
+            <Button onClick={this.onClick(this.props.contact._id)}>Delete</Button>
           </Card.Content>
         </Card>
     );
